@@ -1,0 +1,134 @@
+<style type="text/css">
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: darkblue;
+        height: auto;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+
+
+
+    }
+
+    .seco {
+        display: flex;
+        margin-right: 450px;
+    }
+
+    .root {
+        width: 1400px;
+        display: flex;
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-content: center;
+
+        background-color: #fff;
+        border-radius: 10px;
+        margin-top: 50px;
+        height: auto;
+
+    }
+
+    .gap {
+        margin-top: 20px;
+    }
+</style>
+
+
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<body style="background-color: darkblue;">
+
+<div class="main">
+    <div class="root">
+        <div>
+            <div
+                style="padding: 10px;font-size: 30px;font-weight: bold;letter-spacing: 2px;color: coral; margin-top: 10px; margin-left: 300px;">
+                <img src="/images/dip.png" width="50">
+                List of Resume Indeviduals :
+            </div>
+            <div>
+                <a href="/resume/detailsInput">Fill Resume Details</a>
+            </div>
+            <div>
+                <table class="table" style="width: 1200px;border-radius: 5px;margin-top: 20px;">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Personal<br>Details</th>
+                            <th scope="col">Qualification<br>&nbsp;</th>
+                            <th scope="col">Contact<br>Details</th>
+                            <th scope="col">Skills<br>&nbsp;</th>
+                            <th scope="col">Picture<br>&nbsp;</th>
+                            <th scope="col">update<br>&nbsp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% result.map((item,index)=> {%>
+                            <tr>
+                                <th scope="row">
+                                    <%=(index+1) %>
+                                </th>
+                                <td>
+                                    <div style="font-size: 14px;">
+                                        <b>ID :</b>
+                                        <%=item.personid %>
+                                            <br><b>Name :</b>
+                                            <%=item.personname %><br>
+                                                <%=item.gender %>,<%=item.birthdate %><br><b>Father Name :</b>
+                                                        <%=item.fathername %>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="font-size: 14px;"><b>:: High School ::</b><br><b>Passing Year :</b>
+                                        <%=item.thpassyr %><br><b>Board :</b>
+                                            <%=item.thboard %><br><b>Percentage :</b>
+                                                <%=item.thper %><br><b>:: Higher Secondary School ::</b><br><b>Passing Year
+                                                        :</b>
+                                                    <%=item.twhpassyr %><br><b>Board :</b>
+                                                        <%=item.twhboard %><br><b>Percentage :</b>
+                                                            <%=item.twhper %><br><b>::Graduation ::</b><br><b>Passing Year
+                                                                    :</b>
+                                                                <%=item.gradyr %><br><b>University :</b>
+                                                                    <%=item.graduniv %><br><b>CGPA :</b>
+                                                                        <%=item.gradcgpa %><br><b>Percentage :</b>
+                                                                            <%=item.gradper %>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="font-size: 14px;"><b>Mobile No :</b>
+                                        <%=item.mobile %><br><b>Email Id :</b>
+                                            <%=item.email %><br><b>State</b>
+                                                <%=item.statename %><br><b>City :</b>
+                                                    <%=item.cityname %>
+                                    </div>
+                                </td>
+                                <td><div style="font-size: 14px;"><b>Skills :</b><%=item.skills %></div></td>
+                                  <td><a href="/resume/displaypicture?personid=<%=item.personid%>&picture=<%=item.picture %>"><img src="/images/<%=item.picture %>" style="width: 50px; height: 60px;
+                                    border-radius: 10px;"></a></td>
+                                <td><a href="/resume/displayById?personid=<%=item.personid %>">Update</a></td>
+                                 
+                                
+                            </tr>
+                            
+                                <% }) %>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<style type="text/css">
+    .main {
+        display: flex;
+        background-color: darkblue;
+        height: 180vh;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+
+
+
+    }
+
+    .seco {
+        display: flex;
+        margin-right: 450px;
+    }
+
+    .root {
+        width: 1600px;
+        display: flex;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        background-color: #fff;
+        border-radius: 10px;
+        margin-top: 50px;
+        height: 1200px;
+
+    }
+
+    .gap {
+        margin-top: 20px;
+    }
+</style>
+<html>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/javascripts/project.js"></script>
+<body style="background-color: darkblue;">
+
+<form  action="/resume/editDeletRecord">
+    <div>
+        <input type="hidden" value="<%=result.personid %>" name="personid">
+    </div>
+    <div class="main">
+        <div class="root">
+            <div class="row col gap">
+                <div style="padding: 10px;font-size: 40px;font-weight: bold;letter-spacing: 2px; color: blue; ">
+                    <i> :: Update Details:: </i>
+                </div>
+                <div class="row col gap" style="margin-left: 50px;">
+
+                    <b style="font-size: 20px; color: coral;">Templates :</b>
+                    <img src="/images/universal.jpg" style=" width: 250px; height: 250px;">
+                    <b style="font-size: 18px; color: black;"><a href="/images/universal.jpg">Universal</a> </b>
+                    <img src="/images/fensy.jpg" style="margin-top: 30px; width: 250px; height: 300px;">
+                    <b style="font-size: 18px; color: black;"><a href="/images/fensy.jpg">Fensy</a> </b>
+                    <img src="/images/compact.jpg" style="margin-top: 30px; width: 250px; height: 300px;">
+                    <b style="font-size: 18px; color: black;"><b><a href="/images/compact.jpg">Compact</a> </b>
+                </div>
+
+            </div>
+            <div class=" row " style="margin-top: 100px;">
+                <div class=" row ">
+                    <b style="font-size: 20px; color: coral;">Personal Details:</b>
+                </div>
+                <div class="col gap seco ">
+
+                    <select  name="salut" style="width:300px; margin-top: 20px; height: 37; border-radius: 5px;">
+                        <option value="<%=result.salut %>">-Select-</option>
+                        <option>Master</option>
+                        <option>Miss</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col  gap">
+                    <% var name=result.personname.split(" ") %>
+                    <input value="<%=name[0] %>" style="width:400px; margin-top: 20px; height: 37; border-radius: 5px; " type="text"
+                        class="form-control" placeholder="First name" name="firstname">
+                </div>
+                <div class="col  gap">
+                    <input value="<%=name[1]%>" style="width:400px; margin-top: 20px; height: 37; border-radius: 5px; " type="text"
+                        class="form-control" placeholder="Last name" name="lastname">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <% if(result.gender=="Male"){%>
+                <div class="col" style="display: flex; align-items: center; justify-content: center;">
+                    <input checked type="radio" value="Male" name="gender"><i class="fas fa-male"
+                        style="color: darkslateblue;margin-left: 10px;font-size: 25px;margin-right: 30px;"></i>
+                    <input type="radio" value="Female" name="gender"><i class="fas fa-male"
+                        style="color: deeppink;margin-left: 10px;font-size: 25px;"></i>
+                        <% } else {%>
+                            <input  type="radio" value="Male" name="gender"><i class="fas fa-male"
+                            style="color: darkslateblue;margin-left: 10px;font-size: 25px;margin-right: 30px;"></i>
+                        <input checked type="radio" value="Female" name="gender"><i class="fas fa-male"
+                            style="color: deeppink;margin-left: 10px;font-size: 25px;"></i>
+                            <%}%>
+                </div>
+                <div class="col" style="display: flex;align-items: center; ">
+                    <input value="<%=result.birthdate %>" style="width:400px;" type="date" class="form-control" name="birthdate">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px; ">
+                <div class="col">
+                    <input value="<%=result.fathername %>" style="width:400px;" type="text" class="form-control" placeholder="Father's Name"
+                        name="fathername">
+                </div>
+                
+            </div>
+
+            <div class="row" style="margin-top: 20px;">
+                <div class="row"><b style="font-size: 20px; color: coral;">Qualification :</b></div>
+            </div>
+            <div class="row"><b style="font-size: 15px; color: black;"><b>School :</b></div>
+
+            <div class="row" style="margin-top: 20px; ">
+                <div class="col">
+                    <input value="<%=result.thpassyr %>" type="text" style="width:400px;" class="form-control" placeholder="10 Passing Year"
+                        name="thpassyr">
+                </div>
+                <div class="col">
+                    <input value="<%=result.twhpassyr %>" type="text" style="width:400px;" class="form-control" placeholder="12th Passing Year"
+                        name="twhpassyr">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px;  ">
+                <div class="col">
+                    <input value="<%=result.thboard %>" type="text" style="width:400px;" class="form-control" placeholder="10th Board "
+                        name="thboard">
+                </div>
+                <div class="col">
+                    <input value="<%=result.twhboard %>" type="text" style="width:400px;" class="form-control" placeholder="12th Board"
+                        name="twhboard">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px;">
+                <div class="col">
+                    <input value="<%=result.thper %>" type="text" style="width:400px;" class="form-control" placeholder="10th Percentage"
+                        name="thper">
+                </div>
+                <div class="col">
+                    <input value="<%=result.twhper %>" type="text" style="width:400px;" class="form-control" placeholder="12th Percentage"
+                        name="twhper">
+                </div>
+            </div>
+            <div class="row"><b style="font-size: 15px; margin-top: 15px; color:black;">Graduation :</b></div>
+
+            <div class="row" style="margin-top: 20px;">
+                <div class="col">
+                    <input value="<%=result.gradper %>" type="text" style="width:400px;" class="form-control" placeholder="Graduation Percentage"
+                        name="gradper">
+                </div>
+                <div class="col">
+                    <input value="<%=result.graduniv %>" type="text" style="width:400px;" class="form-control" placeholder="University"
+                        name="graduniv">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px;">
+                <div class="col">
+                    <input value="<%=result.gradyr %>" type="text" style="width:400px;" class="form-control" placeholder="Passing Year"
+                        name="gradyr">
+                </div>
+                <div class="col">
+                    <input value="<%=result.gradcgpa %>" type="text" style="width:400px;" class="form-control" placeholder="Aggregates CGPA"
+                        name="gradcgpa">
+                </div>
+            </div>
+
+            <div class="row" style="color: coral; font-weight: bold; font-size: 20px; margin-top: 20px; ">
+                Contact Details :</div>
+
+            <div class="row" style="margin-top: 20px;">
+                <div class="col">
+                    <input value="<%=result.mobile %>" type="text" style="width:400px;" class="form-control" placeholder="Mobile Number"
+                        name="mobile">
+                </div>
+                <div class="col">
+                    <input value="<%=result.email %>" type="text" style="width:400px;" class="form-control" placeholder="Email Id" name="email">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px;">
+                <div class="col">
+                    <select  class="form-control" style="width:400px;" name="state" id="state">
+                        <option value="<%=result.stateid %>"><%=result.statename %></option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-control" style="width:400px;" name="city" id="city">
+                        <option value="<%=result.cityid %>"><%=result.cityname %></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row" style="color: coral; font-weight: bold; font-size: 20px; margin-top: 20px; ">
+                Skills : </div>
+
+            <div class="row" style="margin-top: 20px;">
+                <div class="col">
+                    <textarea onload="asd()" rows="3" style="width:880px;" name="skills"
+                        placeholder="Ex-Graphic Designing,Content Writing etc."><%=result.slills%></textarea>
+                </div>
+
+            </div>
+            
+            <div class="row" style="margin-top: 20px;">
+                <b style="color: coral; font-size: 20px;">Template type :</b>
+                  <div class="col" style="display: flex; align-items: center; justify-content: center;">
+                      <input type="radio" value="universal" name="temptype">Universal<i class=""
+                          style="color: black;margin-left: 10px;font-size: 25px;margin-right: 30px;"></i>
+                      <input type="radio" value="fensy" name="temptype">Fensy<i class=""
+                          style="color: black;margin-left: 10px;font-size: 25px; margin-right: 30px;"></i>
+                          <input type="radio" value="compact" name="temptype">Compact<i class=""
+                          style="color: black;margin-left: 10px;font-size: 25px;"></i>
+                  </div>
+                  </div>
+
+
+            <div class="row ">
+                <div class="col" style="display:flex;justify-content:center;align-items:center; margin-top: 20;">
+                    <input type="submit" value="Edit" name="btns" class="btn btn-primary" style="width: 200px;">
+                </div>
+                <div class="col" style="display:flex;justify-content:center;align-items:center; margin-top: 20px;">
+                    <input type="submit" value="Delet" name="btns" class="btn btn-primary" style="width: 200px;">
+
+                </div>
+            </div>
+        </div>
+        
+      
+    </div>
+    
+
+    
+           
+        
+        
+
+    
+
+
+</form>
+</body>
+<script>
+    function asd(){
+        var w=document.getElementById("skills").value
+    document.getElementById("submit").onclick=function(){
+    document.getElementById("skills").innerHTML=w
+    
+    }
+}
+</script>
+
+</html>

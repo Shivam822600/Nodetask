@@ -1,0 +1,116 @@
+<style type="text/css">
+    .root {
+        display: flex;
+        background-color: #b6cdd3;
+
+        height: 100vh;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .main {
+        width: 1000px;
+        height: 600px;
+        background-color: #fff;
+        margin-top: 100px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+    }
+    .gap
+    {
+        margin-top: 20px;
+    }
+    .fas{
+        margin-left: 10px;
+       
+    }
+    #eye1{
+        display: none;
+    } 
+    
+</style>
+<html>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<form action="/admin/checkAdminLogin" method="POST">
+
+<div class="root">
+    <div class="main">
+
+        <div class="row">
+            <div class="col">
+                <img src="/images/resume.png" style="width: 500px;height: 450px; padding: 40px;">
+
+            </div>
+            <div class="col">
+                <div style="margin-top: 60px; color: black;font-weight: bold;"><h2>  Administrator  Login  </h2></div>
+
+            
+            <div class="gap" >
+                <label style="color: darkslategray; margin-bottom: 5px; font-weight: bold;">Email ID :</label>
+                <i class="fas fa-envelope" style=" color: black"></i>
+
+          <input style="width: 350px;" required type="email" class="form-control" placeholder="Email Address" name="emailid">
+            </div>
+            <div class="gap">
+                <label style="color: darkslategray; margin-bottom: 5px; font-weight: bold;"> PASSWORD :</label>
+                <i class="fas fa-unlock-alt" style="color: black;"></i>
+                
+           <input id="mypsw"  style="width: 350px;"  required type="password" class="form-control" placeholder="Enter Password" name="psw">
+
+           <span onclick="myFunction()" >
+            <i id="eye1" class="fas gap fa-eye"> Hide Password</i> 
+            <i id="eye2" class="fas gap fa-eye-slash"> Show Password</i>
+            
+           </span>
+            </div>
+            <div>
+                <input type="submit" style="width: 350px;"  value="Login" class="gap btn btn-primary btn-lg btn-block"></input>
+            </div>
+          
+            </div>
+        </div>
+    </div>
+    <div class="row" style=" width: 500px; height: 200px; border-radius: 10px; background-color: rgb(248, 245, 245); margin-bottom: 100px; align-items: center; justify-content: center;">
+        <div style="font-size: 14px; color: red;font-weight: bold;">
+        <%=msg %>
+        </div> 
+
+    </div>
+</div>
+<script>
+    function myFunction(){
+        var x=document.getElementById("mypsw")
+        var y=document.getElementById("eye1")
+        var z=document.getElementById("eye2")
+
+        if(x.type==='password'){
+
+            x.type="text"
+            y.style.display="block"
+            z.style.display="none"
+        }
+        else{
+            x.type="password"
+            y.style.display="none"
+            z.style.display="block"
+
+        }
+
+    }
+</script>
+</form>
+
+</html>
